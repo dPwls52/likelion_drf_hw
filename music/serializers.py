@@ -8,6 +8,9 @@ class SongSerializer(serializers.ModelSerializer):
         read_only_fields = ['singer'] 
 
 class SingerSerializer(serializers.ModelSerializer):
+    id = serializers.CharField(read_only=True)
+    created_at = serializers.CharField(read_only=True)
+    updated_at = serializers.CharField(read_only=True)
     songs = serializers.SerializerMethodField(read_only=True)
 
     def get_songs(self, instance):
