@@ -43,8 +43,8 @@ def singer_detail_update_delete(request, singer_id):
         return Response(serializer.data)
 
     elif request.method == 'PATCH':
-        serializer = SingerSerializer(instance=singer, data=request.data)
-        if serializer.is_valid():
+        serializer = SingerSerializer(instance=singer, data=request.data, partial=True)
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
 
