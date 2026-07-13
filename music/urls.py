@@ -14,4 +14,4 @@ urlpatterns = [
     path('tags/<str:tags_name>', views.find_tag),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MDEIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
